@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vorgan"
+version = "0.1.0"
+description = "Vorgan: a mouse-and-keyboard terminal file manager with the Graph navigator"
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = ["textual>=8.2,<9", "pillow>=10"]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-asyncio"]
+
+[project.scripts]
+vorgan = "vorgan.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
