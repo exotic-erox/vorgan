@@ -25,6 +25,12 @@ cd vorgan
 ./install.sh
 ```
 
+### Nix
+
+```bash
+nix run github:exotic-erox/vorgan
+```
+
 That's the whole tutorial — `install.sh` is safe to run again any time to
 update. It asks pacman for `libarchive` (archive folders) and `pipx` if they
 are missing, installs the package, and copies the `vg` launcher into
