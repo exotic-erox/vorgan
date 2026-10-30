@@ -17,26 +17,49 @@ you point it at.
 
 ## Install
 
-### Arch + fish (the easy way)
+### Arch + fish
 
-```
+```bash
+git clone https://github.com/exotic-erox/vorgan
+cd vorgan
 ./install.sh
 ```
 
-This installs `libarchive` (archive support) and `pipx` if missing, installs
-Vorgan, and drops the `vg` launcher into `~/.config/fish/functions`. Open a new
-fish shell and run `vg`.
+That's the whole tutorial — `install.sh` is safe to run again any time to
+update. It asks pacman for `libarchive` (archive folders) and `pipx` if they
+are missing, installs the package, and copies the `vg` launcher into
+`~/.config/fish/functions`. Prefer doing it by hand:
 
-### Any other terminal (or plain pipx)
-
+```bash
+sudo pacman -S --needed libarchive python-pipx
+pipx install --force .
+mkdir -p ~/.config/fish/functions
+cp shell/vg.fish ~/.config/fish/functions/vg.fish
 ```
-git clone https://github.com/<you>/vorgan
-cd vorgan
-pipx install .
-```
 
-Then run `vorgan [path]` anywhere. That works fine on its own — the only thing
-missing is quit-and-cd (below).
+Open a new fish shell and run `vg`. `q` quits and drops the shell into the
+folder you ended in; `Q` quits and stays put.
+
+### Any other distro, any shell (bash, zsh, …)
+
+1. System bits — install `pipx` and `bsdtar`, the binary that reads archives:
+   - Debian / Ubuntu: `sudo apt install pipx libarchive-tools`
+   - Fedora: `sudo dnf install pipx bsdtar`
+   - Arch without fish: `sudo pacman -S --needed python-pipx libarchive`
+   - Older Debian without a `pipx` package: `python3 -m pip install --user pipx`
+2. Make pipx visible to your shell: `pipx ensurepath`, then open a fresh shell.
+3. Clone and install:
+
+   ```bash
+   git clone https://github.com/exotic-erox/vorgan
+   cd vorgan
+   pipx install .
+   ```
+
+4. Run it: `vorgan ~/Documents`, or `vorgan` inside a folder.
+5. Quit-and-cd is fish's `vg` by default; give bash/zsh the same with the
+   snippet in the next section. Fish users only need the launcher file:
+   `cp shell/vg.fish ~/.config/fish/functions/`.
 
 ### Quit and cd on other shells (bash / zsh)
 
@@ -140,3 +163,9 @@ More docs: [ARCHITECTURE](docs/ARCHITECTURE.md) · [KEYBINDS](docs/KEYBINDS.md) 
 ## License
 
 MIT — see [LICENSE](LICENSE).
+
+## Social
+
+[![PyPI](https://img.shields.io/badge/PyPI-vizr-3775A9?style=for-the-badge&logo=pypi&logoColor=white)](https://pypi.org/project/vizr/)
+[![GitHub](https://img.shields.io/badge/GitHub-vizr-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/exotic-erox/vizr)
+[![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/users/1515183303995560096)
