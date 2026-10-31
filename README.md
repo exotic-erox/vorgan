@@ -7,7 +7,7 @@ pinning and zoom.
 
 # Rust Port 
 
-[![GitHub](https://img.shields.io/badge/GitHub-vizr-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/exotic-erox/Vorgan-Rust)
+[![GitHub](https://img.shields.io/badge/GitHub-Vorgan-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/exotic-erox/Vorgan-Rust)
 
 # Preview
 
