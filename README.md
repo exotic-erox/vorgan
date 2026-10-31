@@ -5,6 +5,12 @@ A mouse-and-keyboard file manager for the terminal. Its signature move is the
 bubbles you click through like Obsidian's graph view, with a physics layout,
 pinning and zoom.
 
+# Rust Port 
+
+[![GitHub](https://img.shields.io/badge/GitHub-vizr-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/exotic-erox/Vorgan-Rust)
+
+# Preview
+
 ![Vorgan](preview.png)
 
 The Graph:
